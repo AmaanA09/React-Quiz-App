@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "id": "a3ac",
+      "name": "Amaan Ansari",
+      "email": "amaan@gmail.com",
+      "password": "Amaan@123"
+    },
+    {
+      "id": "7cf5",
+      "name": "Shahid Afridi",
+      "email": "afridi@1gmail.com",
+      "password": "12345678"
+    }
+  ],
+  "questions": [
+    {
+      "question": " What is the correct syntax to output 'Hello, World!' in JavaScript?",
+      "answer": "console.log('Hello, World!')",
+      "options": [
+        "print('Hello, World!');",
+        "console.log('Hello, World!')",
+        "echo('Hello, World!');",
+        "document.write('Hello, World!');"
+      ]
+    },
+    {
+      "question": "Which operator is used to compare both value and type in JavaScript?",
+      "answer": "===",
+      "options": [
+        "==",
+        "!=",
+        "===",
+        "!=="
+      ]
+    },
+    {
+      "question": "How do you declare a variable in JavaScript?",
+      "answer": "var x;",
+      "options": [
+        "var x;",
+        "variable x;",
+        "int x;",
+        "declare x;"
+      ]
+    },
+    {
+      "question": "What will the following code output? console.log(2 + '2');",
+      "answer": "22",
+      "options": [
+        "4",
+        "22",
+        "Error",
+        "2.2"
+      ]
+    },
+    {
+      "question": "Which method is used to add a new element to the end of an array?",
+      "answer": "push()",
+      "options": [
+        "push()",
+        "pop()",
+        "shift()",
+        "unshift()"
+      ]
+    },
+    {
+      "question": "What is the purpose of the 'this' keyword in JavaScript?",
+      "answer": "It refers to the object from which the function was called.",
+      "options": [
+        "It refers to the global object.",
+        "It refers to the object from which the function was called.",
+        "It refers to the parent object.",
+        "It refers to the function itself."
+      ]
+    },
+    {
+      "question": "Which method is used to remove the last element from an array?",
+      "answer": "pop()",
+      "options": [
+        "pop()",
+        "push()",
+        "splice()",
+        "shift()"
+      ]
+    },
+    {
+      "question": "How can you create a function in JavaScript?",
+      "answer": "function myFunction() {}",
+      "options": [
+        "function myFunction() {}",
+        "create function myFunction() {}",
+        "function: myFunction() {}",
+        "myFunction() = function() {}"
+      ]
+    },
+    {
+      "question": "What is the output of 'console.log(typeof NaN);'",
+      "answer": "number",
+      "options": [
+        "number",
+        "NaN",
+        "undefined",
+        "object"
+      ]
+    },
+    {
+      "question": "How can you convert a string to an integer in JavaScript?",
+      "answer": "parseInt()",
+      "options": [
+        "parseInt()",
+        "parseFloat()",
+        "toInteger()",
+        "convertToInt()"
+      ]
+    }
+  ]
+}
