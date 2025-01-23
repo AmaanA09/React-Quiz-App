@@ -377,6 +377,7 @@ a{
     color: #0948B4;
     cursor: pointer;
     right: 40px;
+    top : 10px;
     /* margin-bottom: 100px; */
 }
 /* Score Board ...... start*/
@@ -590,6 +591,7 @@ a{
     list-style: none;
     padding: 0px 10px;
     font-weight: bold;
+    font-size: 18px;
 }
 
 #header-list > img{

@@ -1,6 +1,13 @@
 import techpaathshalaLogo from "../assets/techpaathshala-logo.svg"
 import userProfile from "../assets/header-image.svg"
+import { useEffect, useState } from "react"
 const Header = () =>{
+    const [userName , setUserName] = useState('')
+
+    useEffect(()=>{
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
+        setUserName(loggedInUser.name)
+    },[])
 
     return(
         <>
@@ -12,7 +19,7 @@ const Header = () =>{
             <div id="header-list">
                 <ul>
                     <li>Hello</li>
-                    <li id="show-user-name"></li>
+                    <li id="show-user-name">{userName}</li>
                 </ul>
                 <img src={userProfile} alt="image"/>
             </div>

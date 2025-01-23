@@ -41,8 +41,9 @@ function Login(){
         e.preventDefault()
         if(validate()){
             
-            const user = users.find((u) => u.email === email && u.password === password)
-            if(user){
+            const loggedInUser = users.find((u) => u.email === email && u.password === password)
+            if(loggedInUser){
+                localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
                 navigate("/dashboard")
             }else{
                 alert("Incorrect email or password")
@@ -50,6 +51,8 @@ function Login(){
             setEmail('')
             setPassword('')
             setError({})
+
+
         }
     }
 
