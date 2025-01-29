@@ -22,7 +22,7 @@ function* fetchUserTest() {
   }
   function* updateUserTest(action) {
     try {
-      const response = yield call(axios.post, apiUrl, action.payload);
+      const response = yield call(axios.put, `${apiUrl}/${action.payload.id}`, action.payload);
       yield put({ type: "UPDATE_USERTEST_SUCCESS", payload: response.data });
     } catch (error) {
       yield put({ type: "UPDATE_USERTEST_FAILURE", payload: error.message });

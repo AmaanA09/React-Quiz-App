@@ -13,7 +13,7 @@ export const fetchUserTestFail = () =>({
 export const addUserTestRequest = (userTest) =>({
     type : "ADD_USERTEST_REQUEST" , payload : userTest
 })
-export const addUserTestSuccess = (user) =>({
+export const addUserTestSuccess = (userTest) =>({
     type : "ADD_USERTEST_SUCCESS" , payload : userTest
 })
 export const addUserTestFail = (error) =>({

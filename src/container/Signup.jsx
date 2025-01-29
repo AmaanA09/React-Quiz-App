@@ -14,7 +14,7 @@ function Signup() {
   const [errors, setErrors] = useState({});
   const [isChecked , setIsChecked] = useState(false)
   // const [passwordShow , setPasswordShow] = useState(true)
-  // const [passwordHide , setPasswordHide] = useState(false)
+  const [visible , setVisible] = useState(true)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -121,7 +121,7 @@ function Signup() {
                 </label>
               </div>
               <input
-                type="password"
+                type={visible ? "text" : "password"}
                 id="password"
                 name="pass"
                 placeholder="password"
@@ -130,8 +130,7 @@ function Signup() {
                   setPassword(e.target.value)
                 }
               />
-               <img src={eyeOpen} id='passwordShow' onClick={handlPassword}/>
-               <img src={eyeClose} id='passwordHide' onClick={handlPassword}/>
+               <img src={visible ? eyeOpen : eyeClose} id='passwordShow' onClick={()=>{setVisible(!visible)}}/>
               {errors.password && (
                 <span style={{ color: "red" }}>{errors.password}</span>
               )}

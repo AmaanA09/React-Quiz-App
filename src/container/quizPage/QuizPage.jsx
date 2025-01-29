@@ -12,19 +12,18 @@ import {
 import { useNavigate } from "react-router";
 
 function QuizPage() {
-  
+
   const [choosedquestion, setChoosedquestion] = useState([]);
   const [countQuestions, setCountQuestions] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedOptionArray, setSelectedOptionArray] = useState([]);
   const [previosBtn, setPreveiosBtn] = useState(false);
   const [randomNumberArray, setrandomNmberArray] = useState([]);
-
   // const [marks, setMarks] = useState(0);
-  // const [test , setTest] = useState([])
+  const [test , setTest] = useState([])
   const navigate = useNavigate();
   const questions = useSelector((state) => state.questions.questions);
-  // const userTest = useSelector((state) => state.userTest?.userTest);
+  const userTest = useSelector((state) => state.userTest.userTest);
   const dispatch = useDispatch();
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
 
@@ -39,7 +38,7 @@ function QuizPage() {
     if (countQuestions === 4) {
       calculateMarks();
     }
-    
+
   }, [selectedOptionArray])
 
   useEffect(() => {
@@ -59,8 +58,8 @@ function QuizPage() {
     }
   }, [questions]);
 
-  const handleOptionClick = (option)=>{
-    setSelectedOption(option)  
+  const handleOptionClick = (option) => {
+    setSelectedOption(option)
   }
 
   const handleNextButton = () => {
@@ -70,23 +69,23 @@ function QuizPage() {
     }
     if (countQuestions < 4) {
       setCountQuestions((countQuestions) => countQuestions + 1);
-    const updatedOptionsArray = [...selectedOptionArray];
-    updatedOptionsArray[countQuestions] = selectedOption;
-    setSelectedOptionArray(updatedOptionsArray);  
-    setSelectedOption(updatedOptionsArray[  countQuestions + 1]);
-    } 
+      const updatedOptionsArray = [...selectedOptionArray];
+      updatedOptionsArray[countQuestions] = selectedOption;
+      setSelectedOptionArray(updatedOptionsArray);
+      setSelectedOption(updatedOptionsArray[countQuestions + 1]);
+    }
     if (countQuestions === 0) {
       setPreveiosBtn(true);
-    } 
-    if(countQuestions === 3){
+    }
+    if (countQuestions === 3) {
       navigate("/scoreboard")
     }
-    
+
   };
 
   const handlePreviousButton = () => {
     if (countQuestions > 0) {
-      setCountQuestions((countQuestions) => (countQuestions -1));
+      setCountQuestions((countQuestions) => (countQuestions - 1));
       const previousSelectedOption = selectedOptionArray[countQuestions - 1] || "";
       setSelectedOption(previousSelectedOption);
     }
@@ -97,32 +96,63 @@ function QuizPage() {
 
   const calculateMarks = () => {
     let tempMarks = 0;
-     const tempTest = selectedOptionArray.map(
+    const tempTest = selectedOptionArray.map(
       (selectedOption, index) => {
-        console.log({selectedOption, index})
+        console.log({ selectedOption, index })
         const correctAnswer = questions[randomNumberArray[index]].answer;
         if (selectedOption === correctAnswer) {
           tempMarks += 10;
         }
-        return({
-          questions : questions[randomNumberArray[index]].question,
-          options : questions[randomNumberArray[index]].options,
-          selectedOption : selectedOption,
-          correctAnswer : correctAnswer,
+        return ({
+          questions: questions[randomNumberArray[index]].question,
+          options: questions[randomNumberArray[index]].options,
+          selectedOption: selectedOption,
+          correctAnswer: correctAnswer,
         })
       }
     );
+    // setMarks(tempMarks)
 
-    dispatch(
-      addUserTestRequest({
-      name : loggedInUser.name,
-      email : loggedInUser.email,
-      date : new Date().toDateString(),
-      test :  tempTest,
-      score : tempMarks,
-    }))
-}
-  
+    
+    // Prepare data for saving
+    // const loggedInEmail = loggedInUser[0].email;
+    const date = new Date();
+
+    // Checking if the user has any previous tests
+    const existingUser = userTest.find(
+      (user) => user.email === loggedInUser.email
+    );
+    const newTest = {
+      selectedAnswer : tempTest,
+      marks : tempMarks
+    }
+
+    const updatedTest = [...test, newTest];
+    setTest(updatedTest)
+
+    if(existingUser){
+      const existingTest = existingUser.tests
+      const newTests = [...existingTest , newTest]
+      
+      dispatch(updateUserTestRequest({
+        id : existingUser.id,
+        name : loggedInUser.name,
+        email : loggedInUser.email,
+        score : tempMarks,
+        tests : newTests
+      }))
+    }else{
+      dispatch(
+        addUserTestRequest({
+          name: loggedInUser.name,
+          email: loggedInUser.email,
+          date: new Date().toDateString(),
+          score: tempMarks,
+          tests: updatedTest,
+        }))
+    }
+  }
+
 
   return (
     <>
@@ -135,21 +165,21 @@ function QuizPage() {
               <h2 id="countQuestions">Hey! this is Last Question</h2>
             ) : (
               <h2 id="countQuestions">
-                Question <span id="countQue">{countQuestions+1} </span> of 4
+                Question <span id="countQue">{countQuestions + 1} </span> of 4
               </h2>
             )}
           </div>
           <div id="progress-bar">
             <span
               id="progress-percentage"
-              style={{ width: `${((countQuestions+1) / 4) * 100}%` }}
+              style={{ width: `${((countQuestions + 1) / 4) * 100}%` }}
             ></span>
           </div>
         </div>
         <div id="questions">
           <h3>
             <span id="countNum">
-              {countQuestions+1}.
+              {countQuestions + 1}.
             </span>
             <span id="quizes">{choosedquestion[countQuestions]?.question}</span>
           </h3>
