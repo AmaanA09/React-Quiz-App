@@ -1,3 +1,4 @@
+/* @import "tailwindcss"; */
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -558,24 +559,51 @@ a{
 .score-cards-names  > div{
     display: flex;
 }
-/* user Side Header start... */
+/*  Header start... */
 #quiz-app-header{
-    position:relative;
+    position:fixed;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid  rgba(203, 203, 203, 1);
     padding: 16px 80px;
     height: 72px;
+    z-index: 4;
+    background-color: #ffffff;
+}
+#quiz-app-header > div{
+    display: flex;
+    z-index: 22;
 }
 #quiz-app-header > div > i{
     margin-left: 30px;
     font-size: 24px;
     cursor: pointer;
 }
-/* #quiz-app-header > div > img{
-    padding-left: 50px;
-} */
+#humburger-container{
+    margin-left: 30px;
+    width: 20px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#humburger-container > span{
+    background-color: #878a99;
+    width: 100%;
+    height: 2px;
+}
+#humburger-container span:nth-child(2){
+    margin-inline-start: -10px;
+    transition: all 0.3s ease-out;
+}
+#humburger-container:hover  span:nth-child(2){
+    margin-inline-start: 0px;
+}
 
 #header-list{
     display: flex;
@@ -597,5 +625,352 @@ a{
 
 #header-list > img{
     cursor: pointer;
+}
+#admin-page-menu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 200px;    
+    padding: 40px;
+    height: 88vh;
+    translate: 0px 73px;
+    z-index: 2;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#admin-page-menu > div{
+    width: 200px;
+    padding-right: 90px;
+    padding: 8px;
+    margin-left: -20px;  
+    cursor: pointer; 
+}
+
+#admin-page-menu > div > a > p > i{
+    font-size: 18px; 
+    margin-right: 10px
+}
+.sideBarUser{
+    padding-left: 5px;
+}
+#admin-page-menu > div > a > p{
+    padding-left: 28px;
+    font-size: 18px;
+    color: #878a99;
+}
+#admin-page-menu > div > a > p:hover{
+    color: #F3BD00;
+}
+.active-link{
+    background-color: #F3BD00;
+}
+
+#admin-dashboard{
+    display: flex;
+   
+}
+#admin-dashboard > div{
+     translate: 0px 73px;
+     /* padding-left: 220px; */
+}
+#admin-users{
+    position: relative;
+    display: flex;
+}
+
+#admin-users > div{
+    /* display: flex; */
+    position: relative;
+    width: 100%;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    align-items: start;
+    /* margin-left: 220px; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#admin-dashboard > div{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 81vh;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+#admin-dashboard > div > h2{
+    font-size: 30px;
+}
+
+#users-table{
+    width: 100%;
+    margin: 20px  0px;
+}
+#users-table,thead,tr{
+    border: 1px solid #EAEAEA;
+    border-collapse:collapse;
+}
+#users-table > thead > tr > th{
+    padding: 12px 10px;
+    color: #495057 ;
+    font-size: 20px;
+    
+}
+#users-table > thead{
+    background-color: #f8f9fd;;
+}
+#users-table > tbody > tr > td{
+    padding: 15px 5px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #878a99;
+}
+#users-table > tbody > tr > td > a{
+    color: #878a99;
+    padding: 0px 10px;
+}
+#users-table > tbody > tr > td > img{
+    padding: 0px 5px;
+}
+#users-table  #edit-icon:hover{
+    cursor: pointer;
+}
+#users-table  #view-icon:hover{
+    cursor: pointer;
+}
+#users-table  #delete-icon:hover{
+    cursor: pointer;
+}
+.translate-from-top{
+    translate: 0px 73px;
+}
+#add-new-quize{
+    position: relative;
+    float: right;
+    margin-bottom: 10px;
+    background-color: #90ee90;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+#user-test-list{
+    border: 1px solid #EAEAEA;
+    padding: 10px;
+    margin: 10px 0px;
+}
+#user-test-list > p{
+    font-size: 20px;
+    padding: 5px;
+    color:#8E8E93;
+}
+#user-test-list > p > .translate-right{
+    margin-left: 80px;
+}
+#user-test-list > p > .translate-right-question{
+    margin-left: 78px;
+}
+#user-test-list > p > .correct-answer-right{
+    margin-left: 24px;
+}
+#user-test-list > p > .choosed-answer-right{
+    margin-left: 15px;
+}
+#add-quize-section{
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px 0px 0px 0px;
+    width: 100%;
+    border-radius: 10px;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+ #add-quize-section > p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#add-question-form{
+    position: relative;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.option-wrapper{
+    display: flex;
+    gap: 50px;
+}
+
+#add-question-form > div{
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#add-question-form > div > div{
+    margin-bottom: 10px;
+    width: 100%;
+}
+#add-question-form > div > div > div{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#add-question-form > div > div >label{
+    font-size: 20px;
+}
+#add-question-form > div > div > div > label{
+    font-size: 20px;
+}
+.star{
+    color: red;
+}
+#question{
+    width: 100%;
+}
+#add-question-form > div > textarea{
+    padding: 5px 5px 0px 5px;
+    /* width: 40%; */
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#add-question-form > div > div > input{
+    padding: 5px ;
+    width: 100%;
+    font-size: 20px;
+}
+
+#add-question-form > div > select{
+    width: 47.4%;
+    padding: 5px;
+    font-size: 18px;
+}
+#add-question-form > button{
+    background-color: #F3BD00;
+    border: none;
+    color: #EAEAEA;
+    padding: 8px;
+    font-size: 18px;
+    /* width: 15%; */
+    margin-top: 10px;
+    cursor: pointer;
+}
+#opacity-question-detail{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#opacity{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 6;
+}
+#opacity-question-detail  > #question-detail-wrap {
+    position: fixed;
+    z-index: 6;
+    translate: 0% 50%;
+}
+#opacity-question-detail  > #delete-wrap {
+    position: fixed;
+    z-index: 6;
+    translate: 0% 55%;
+}
+#opacity-question-detail  > #delete-wrap > div {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px 20px 30px 20px;
+    z-index: 4;
+    text-align: center;
+}
+#opacity-question-detail  > #delete-wrap> div >#exitButton{
+    position: relative;
+    background-color: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    translate: 0px -20px;
+    margin-bottom: 5px;
+    float: right;
+}
+#opacity-question-detail  > #delete-wrap> div >img{
+    margin: 10px;
+}
+#opacity-question-detail  > #delete-wrap> div >p{
+    padding: 10px 0px 20px 0px;
+    font-size: 18px;
+}
+#opacity-question-detail  > #delete-wrap> div > #btn-wrap{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+#opacity-question-detail  > #delete-wrap> div > #btn-wrap > button{
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+#opacity-question-detail  > #delete-wrap> div > #btn-wrap > .delete-btn:hover{
+    background-color: rgb(255, 127, 127);
+}
+#opacity-question-detail  > #delete-wrap> div > #btn-wrap > .cancel-btn:hover{
+    background-color:#40deff ;
+}
+#opacity-question-detail  > #question-detail-wrap > div{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px 20px 30px 20px;
+    z-index: 4;
+}
+#opacity-question-detail  > #question-detail-wrap > div >#exitButton{
+    position: relative;
+    background-color: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    translate: 0px -20px;
+    margin-bottom: 5px;
+    float: right;
+}
+#opacity-question-detail > #question-detail-wrap > div > p{
+    padding: 10px;
+    border: 1px solid #EAEAEA;
+}
+#opacity-question-detail > #question-detail-wrap > div > p > span{
+    padding-left: 60px;
+}
+#opacity-question-detail > #question-detail-wrap > div > p > #question{
+    padding-left: 52px;
+}
+#opacity-question-detail > #question-detail-wrap > div > p > #correctAnswer{
+    padding-left: 10px;
+}
+/* Edit modal form */
+
+#opacity-question-detail  > #edit-form-wrap {
+    position: fixed;
+    z-index: 6;
+    translate: 0%  20%;
+}
+#opacity-question-detail  > #edit-form-wrap > div {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    z-index: 4;
+}
+#opacity-question-detail  > #edit-form-wrap> div >#exitButton{
+    position: relative;
+    background-color: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    float: right;
+    z-index: 5;
 }
 

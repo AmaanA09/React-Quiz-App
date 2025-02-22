@@ -6,6 +6,12 @@ import QuizPage from "./pages/Quizpage"
 import ScoreBoardPage from "./pages/ScoreBoardPage"
 import { Provider } from "react-redux";
 import store from "./store/store";
+import AdminDashboardPage from "./pages/Admin/AdminDashboardPage";
+import UsersPage from "./pages/Admin/UsersPage";
+import QuizQuestionPage from "./pages/Admin/QuizePage";
+import UserTestListPage from "./pages/Admin/UserTestListPage";
+import UserHistoryPage from "./pages/Admin/UserHistoryPage";
+import AddNewQuizePage from "./pages/Admin/AddNewQuizPage";
 
 function App() {
 
@@ -18,6 +24,12 @@ function App() {
       <Route path="/dashboard" element={<DashboardPage/>}/>
       <Route path="/quiz" element={<QuizPage/>}/>
       <Route path="/scoreboard" element={<ScoreBoardPage/>}/>
+      <Route path="/admindashboard" element={<AdminDashboardPage/>}/> 
+      <Route path="/quizquestions" element={<QuizQuestionPage/>}/>
+      <Route path="/addnewquiz" element={<AddNewQuizePage/>}/>
+      <Route path="/users" element={<UsersPage/>}/>
+      <Route path="/userHistory/:index/:name/:email" element={<UserHistoryPage/>}/>
+      <Route path="/userTestList/:index/:name/:email" element={<UserTestListPage/>}/>
     </Routes>
     </Provider>
     </>

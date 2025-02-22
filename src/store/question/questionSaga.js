@@ -13,10 +13,12 @@ function* fetchQuestions() {
   }
 
   function* addQuestions(action) {
+    console.log(action)
     try {
       const response = yield call(axios.post, apiUrl, action.payload);
       yield put({ type: "ADD_QUESTIONS_SUCCESS", payload: response.data });
     } catch (error) {
+      console.log("error=>",error)
       yield put({ type: "ADD_QUESTIONS_FAILURE", payload: error.message });
     }
   }

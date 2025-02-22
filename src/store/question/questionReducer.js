@@ -9,7 +9,7 @@ const initialState = {
       case "FETCH_QUESTIONS_SUCCESS":
         return { ...state, questions: action.payload };
       case "ADD_QUESTIONS_SUCCESS":
-        return { ...state, questions: [...state.questions, ...action.payload] };
+        return { ...state, questions: [...state.questions, action.payload] };
         default:
       return state;
     }}

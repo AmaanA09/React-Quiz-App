@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SignupImage from "../assets/signup-image.svg";
 import eyeClose from "../assets/eye-close-pass.png"
 import eyeOpen from "../assets/eye-open-pass.png"
 import googleIcon from "../assets/google-icon.png"
 import { Link, useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
-import { addUserRequest } from "../store/user/userAction";
+import { useDispatch, useSelector } from "react-redux";
+import { addUserRequest, fetchUserRequest } from "../store/user/userAction";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -13,10 +13,13 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [isChecked , setIsChecked] = useState(false)
-  // const [passwordShow , setPasswordShow] = useState(true)
-  const [visible , setVisible] = useState(true)
+  const [visible , setVisible] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const users = useSelector(state => state.users.users)
+   useEffect(() => {
+          dispatch(fetchUserRequest())
+      }, [dispatch])
 
 
   const validate = () => {
@@ -55,15 +58,17 @@ function Signup() {
       setEmail('');
       setPassword('');
       setErrors({});
+      const userExisting = users.find((u) => u.email === email)
+      if(userExisting){
+        alert("user already existing")
+        return
+      }
       dispatch(addUserRequest({name,email,password}))
       navigate('/')
       alert("Signup Successfull")
     }
   };
 
-  const handlPassword = () =>{
-  
-}
 
   return (
     <>

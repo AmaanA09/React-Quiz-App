@@ -169,50 +169,6 @@
       "score": 0,
       "tests": [
         {
-          "questions": " What is the correct syntax to output 'Hello, World!' in JavaScript?",
-          "options": [
-            "print('Hello, World!');",
-            "console.log('Hello, World!')",
-            "echo('Hello, World!');",
-            "document.write('Hello, World!');"
-          ],
-          "selectedOption": "print('Hello, World!');",
-          "correctAnswer": "console.log('Hello, World!')"
-        },
-        {
-          "questions": "How can you convert a string to an integer in JavaScript?",
-          "options": [
-            "parseInt()",
-            "parseFloat()",
-            "toInteger()",
-            "convertToInt()"
-          ],
-          "selectedOption": "parseInt()",
-          "correctAnswer": "parseInt()"
-        },
-        {
-          "questions": "What is the purpose of the 'this' keyword in JavaScript?",
-          "options": [
-            "It refers to the global object.",
-            "It refers to the object from which the function was called.",
-            "It refers to the parent object.",
-            "It refers to the function itself."
-          ],
-          "selectedOption": "It refers to the object from which the function was called.",
-          "correctAnswer": "It refers to the object from which the function was called."
-        },
-        {
-          "questions": "What will the following code output? console.log(2 + '2');",
-          "options": [
-            "4",
-            "22",
-            "Error",
-            "2.2"
-          ],
-          "selectedOption": "4",
-          "correctAnswer": "22"
-        },
-        {
           "selectedAnswer": [
             {
               "questions": "Which method is used to remove the last element from an array?",

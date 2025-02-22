@@ -124,7 +124,8 @@ function QuizPage() {
     );
     const newTest = {
       selectedAnswer : tempTest,
-      marks : tempMarks
+      marks : tempMarks,
+      date : new Date().toDateString(),
     }
 
     const updatedTest = [...test, newTest];
