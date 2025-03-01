@@ -28,8 +28,8 @@ const QuizQuestions = () => {
         <>
             <section>
             {questionDetailModal && <ViewQuestionDetail questionIndex={questionIndex} setQuestionDetailModal={setQuestionDetailModal}/>}
-            {deleteModal && <DeleteModal setDeleteModal={setDeleteModal}/>}
-            {editModal && <EditModal setEditModal={setEditModal}/>}
+            {deleteModal && <DeleteModal setDeleteModal={setDeleteModal} questionIndex={questionIndex}/>}
+            {editModal && <EditModal setEditModal={setEditModal} questionIndex={questionIndex}/>}
                 <AdminNavbar sideBar={sideBar} setSideBar={setSideBar} />
                 <div id="admin-users">
                     {sideBar && <SideBar />}
@@ -43,14 +43,14 @@ const QuizQuestions = () => {
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            {questions.map((user, index) => (
+                            {questions.map((quiz,index) => (
                                 <tbody key={index}>
                                     <tr>
                                         <td>{index + 1}</td>
-                                        <td>{user.question}</td>
-                                        <td><img src={editIcon} id="edit-icon" onClick={()=>(setEditModal(true))}/>
+                                        <td>{quiz.question}</td>
+                                        <td><img src={editIcon} id="edit-icon" onClick={()=>(setEditModal(true),setQuestionIndex(index))}/>
                                         <img src={eyeIcon} id="view-icon" onClick={()=>(setQuestionIndex(index) , setQuestionDetailModal(true))}/>
-                                        <img src={dustbinIcon} id="delete-icon" onClick={() => (setDeleteModal(true))}/>
+                                        <img src={dustbinIcon} id="delete-icon" onClick={() => (setDeleteModal(true) , setQuestionIndex(index))}/>
                                         </td>
                                     </tr>
                                 </tbody>

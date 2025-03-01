@@ -1,6 +1,25 @@
+import { useDispatch, useSelector } from "react-redux"
 import exclamationMark from "../../../assets/exclamation.png" 
+import { deleteQuestionsRequest } from "../../../store/question/questionAction"
 
-const DeleteModal = ({setDeleteModal}) => {
+const DeleteModal = ({setDeleteModal,questionIndex}) => {
+    const question = useSelector((state)=> state.questions.questions)
+    const dispatch = useDispatch()
+
+    const handlDelete = (id)=>{
+        console.log("hiiii",id)
+        if(!id){
+            console.error("attemped to delete with undefined id ")
+            return 
+        }
+        dispatch(deleteQuestionsRequest(id))
+        setDeleteModal(false)
+    }
+    console.log("heloo",question[questionIndex].id)
+
+    if(!question[questionIndex]){
+        return null
+    }
 
     return (
         <>
@@ -11,7 +30,7 @@ const DeleteModal = ({setDeleteModal}) => {
                         <img src={exclamationMark} alt="Exclamation Mark" />
                         <p>Are You Sure Delete This Item</p>
                         <div id="btn-wrap">
-                            <button className="delete-btn" >Delete</button>
+                            <button className="delete-btn" onClick={()=>handlDelete(question[questionIndex].id)} >Delete</button>
                             <button className="cancel-btn" onClick={() => (setDeleteModal(false))}>Cancel</button>
                         </div>
                     </div>

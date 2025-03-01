@@ -13,6 +13,7 @@ const AddNewQuize = () => {
     const [optionD, setOptionD] = useState("")
     const [correctAnswer, setCorrectAnswer] = useState("")
     const questions = useSelector((state) => state.questions.questions)
+    console.log(questions.id)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchQuestionsRequest())
@@ -41,16 +42,17 @@ const AddNewQuize = () => {
     // setAddNewQuiz(addQuizObj)
     const handleAddQuiz = (e) => {
         e.preventDefault()
-        console.log({
-            "question": question,
-            "options": [optionA, optionB, optionC, optionD],
-            "answer": correctAnswer,
-        })
         dispatch(addQuestionsRequest({
             "question": question,
             "options": [optionA, optionB, optionC, optionD],
             "answer": correctAnswer,
         }))
+        setQuestion("")
+        setOptionA("")
+        setOptionB("")
+        setOptionC("")
+        setOptionD("")
+        setCorrectAnswer("")
     }
 
     return (

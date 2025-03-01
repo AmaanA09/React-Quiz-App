@@ -26,3 +26,33 @@ export const addQuestionsFail = (error) => ({
     type: "ADD_QUESTIONS_FAILURE",
     payload: error
 });
+
+export const updateQuestionsRequest = (questions) => ({
+    type: "UPDATE_QUESTIONS_REQUEST",
+    payload: questions
+});
+
+export const updateQuestionsSuccess = (questions) => ({
+    type: "UPDATE_QUESTIONS_SUCCESS",
+    payload: questions
+});
+
+export const updateQuestionsFail = (error) => ({
+    type: "UPDATE_QUESTIONS_FAILURE",
+    payload: error
+});
+
+export const deleteQuestionsRequest = (id) => ({
+    type: "DELETE_QUESTIONS_REQUEST",
+    payload: id
+});
+
+export const deleteQuestionsSuccess = (id) => ({
+    type: "DELETE_QUESTIONS_SUCCESS",
+    payload: id
+});
+
+export const deleteQuestionsFail = (error) => ({
+    type: "DELETE_QUESTIONS_FAILURE",
+    payload: error
+});
