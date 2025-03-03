@@ -1,16 +1,18 @@
 import techpaathshalaLogo from "../assets/techpaathshala-logo.svg"
 import userProfile from "../assets/header-image.svg"
 import { useEffect, useState } from "react"
+import LogoutModal from "../container/Admin/Modal/LogoutModal"
 const Header = () =>{
     const [userName , setUserName] = useState('')
 
     useEffect(()=>{
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
-        setUserName(loggedInUser.name)
+        setUserName(loggedInUser?.name)
     },[])
 
     return(
         <>
+        <LogoutModal/>
         <header>
         <div id="quiz-app-header">
             <div>
@@ -23,15 +25,6 @@ const Header = () =>{
                 </ul>
                 <img src={userProfile} alt="image"/>
             </div>
-        </div>
-        <div id="logout-container" className="logout-container">
-            {/* <div>
-                <i class="fa-solid fa-sort-up"></i>
-                <p id="logedinuser-firstname"></p>
-                <p id="current-user-name"></p>
-                <p id="current-user-email"></p>
-                <button type="button" id="logOut-btn">Log out</button>
-            </div> */}
         </div>
     </header>
         </>

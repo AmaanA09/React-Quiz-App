@@ -5,10 +5,10 @@ import { useEffect, useState } from "react"
 const AdminNavbar = ({sideBar , setSideBar}) => {
     const [userName, setUserName] = useState('')
 
-    // useEffect(() => {
-    //     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
-    //     setUserName(loggedInUser.name)
-    // }, [])
+    useEffect(() => {
+        const loggedInAdmin = JSON.parse(localStorage.getItem("loggedInAdmin"))
+        setUserName(loggedInAdmin?.name)
+    }, [])
 
 
     return (
@@ -27,19 +27,10 @@ const AdminNavbar = ({sideBar , setSideBar}) => {
                     <div id="header-list">
                         <ul>
                             <li>Hello</li>
-                            <li id="show-user-name">Admin</li>
+                            <li id="show-user-name">{userName ? userName : "Admin"}</li>
                         </ul>
                         <img src={userProfile} alt="image" />
                     </div>
-                </div>
-                <div id="logout-container" className="logout-container">
-                    {/* <div>
-                <i class="fa-solid fa-sort-up"></i>
-                <p id="logedinuser-firstname"></p>
-                <p id="current-user-name"></p>
-                <p id="current-user-email"></p>
-                <button type="button" id="logOut-btn">Log out</button>
-            </div> */}
                 </div>
             </header>
         </>

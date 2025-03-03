@@ -12,6 +12,7 @@ import QuizQuestionPage from "./pages/Admin/QuizePage";
 import UserTestListPage from "./pages/Admin/UserTestListPage";
 import UserHistoryPage from "./pages/Admin/UserHistoryPage";
 import AddNewQuizePage from "./pages/Admin/AddNewQuizPage";
+import AdminLoginPage from "./pages/Admin/AdminLoginPage";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/quizquestions" element={<QuizQuestionPage/>}/>
       <Route path="/addnewquiz" element={<AddNewQuizePage/>}/>
       <Route path="/users" element={<UsersPage/>}/>
+      <Route path="/adminlogin" element={<AdminLoginPage/>}/>
       <Route path="/userHistory/:index/:name/:email" element={<UserHistoryPage/>}/>
       <Route path="/userTestList/:index/:name/:email" element={<UserTestListPage/>}/>
     </Routes>

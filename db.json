@@ -47,6 +47,12 @@
       "name": "ratib ansari",
       "email": "ratib@gmail.com",
       "password": "ratib123"
+    },
+    {
+      "id": "ddea",
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin123"
     }
   ],
   "questions": [
@@ -601,7 +607,7 @@
       "id": "19f0",
       "name": "ratib ansari",
       "email": "ratib@gmail.com",
-      "score": 0,
+      "score": 20,
       "tests": [
         {
           "selectedAnswer": [
@@ -700,6 +706,56 @@
             }
           ],
           "marks": 0
+        },
+        {
+          "selectedAnswer": [
+            {
+              "questions": "How can you create a function in JavaScript?",
+              "options": [
+                "function myFunction() {}",
+                "create function myFunction() {}",
+                "function: myFunction() {}",
+                "myFunction() = function() {}"
+              ],
+              "selectedOption": "create function myFunction() {}",
+              "correctAnswer": "function myFunction() {}"
+            },
+            {
+              "questions": "How can you convert a string to an integer in JavaScript?",
+              "options": [
+                "parseInt()",
+                "parseFloat()",
+                "toInteger()",
+                "convertToInt()"
+              ],
+              "selectedOption": "parseFloat()",
+              "correctAnswer": "parseInt()"
+            },
+            {
+              "questions": " What is the correct syntax to output 'Hello, World!' in JavaScript?",
+              "options": [
+                "print('Hello, World!');",
+                "console.log('Hello, World!')",
+                "echo('Hello, World!');",
+                "document.write('Hello, World!');"
+              ],
+              "selectedOption": "console.log('Hello, World!')",
+              "correctAnswer": "console.log('Hello, World!')"
+            },
+            {
+              "questions": "What will the following code output? console.log(2 + '2');",
+              "options": [
+                "4",
+                "22",
+                "Error",
+                "2.2"
+              ],
+              "selectedOption": "22",
+              "correctAnswer": "22"
+            }
+          ],
+          "marks": 20,
+          "date": "Sun Mar 02 2025"
         }
       ]
     }

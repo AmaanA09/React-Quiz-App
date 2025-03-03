@@ -1,6 +1,14 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 const SideBar = ()=>{
+    const navigate = useNavigate()
+
+    const handleLogoutAdmin = ()=>{
+        if(confirm("Are you sure you want to log out?")){
+            localStorage.removeItem("loggedInAdmin")
+            navigate("/adminlogin")
+        }
+    }
 
     return(
         <>
@@ -14,6 +22,8 @@ const SideBar = ()=>{
             <div>
                 <NavLink to="/quizquestions" className={(isActive)=> (isActive ? "active-link" : " ")}><p><i className="fa-solid fa-circle-question"></i>Quize</p></NavLink>
             </div>
+
+            <button id="adminlogout-btn" onClick={handleLogoutAdmin}>Logout</button>
         </section>
         </>
     )
