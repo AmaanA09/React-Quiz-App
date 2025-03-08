@@ -385,8 +385,7 @@
       "id": "875e",
       "name": "Amaan Ansari",
       "email": "amaan@gmail.com",
-      "date": "Wed Jan 29 2025",
-      "score": 40,
+      "score": 30,
       "tests": [
         {
           "selectedAnswer": [
@@ -436,6 +435,56 @@
             }
           ],
           "marks": 40
+        },
+        {
+          "selectedAnswer": [
+            {
+              "questions": "Which method is used to add a new element to the end of an array?",
+              "options": [
+                "push()",
+                "pop()",
+                "shift()",
+                "unshift()"
+              ],
+              "selectedOption": "push()",
+              "correctAnswer": "push()"
+            },
+            {
+              "questions": "Which operator is used to compare both value and type in JavaScript?",
+              "options": [
+                "==",
+                "!=",
+                "===",
+                "!=="
+              ],
+              "selectedOption": "===",
+              "correctAnswer": "==="
+            },
+            {
+              "questions": "How do you declare a variable in JavaScript?",
+              "options": [
+                "var x;",
+                "variable x;",
+                "int x;",
+                "declare x;"
+              ],
+              "selectedOption": "variable x;",
+              "correctAnswer": "var x;"
+            },
+            {
+              "questions": "What is the output of 'console.log(typeof NaN);'",
+              "options": [
+                "number",
+                "NaN",
+                "undefined",
+                "object"
+              ],
+              "selectedOption": "number",
+              "correctAnswer": "number"
+            }
+          ],
+          "marks": 30,
+          "date": "Sat Mar 08 2025"
         }
       ]
     },

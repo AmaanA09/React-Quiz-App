@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import LogoutModal from "../container/Admin/Modal/LogoutModal"
 const Header = () =>{
     const [userName , setUserName] = useState('')
+    const [logoutModal , setLogoutMadal] = useState(false)
 
     useEffect(()=>{
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
@@ -12,7 +13,7 @@ const Header = () =>{
 
     return(
         <>
-        <LogoutModal/>
+        {logoutModal && <LogoutModal/>}
         <header>
         <div id="quiz-app-header">
             <div>
@@ -23,7 +24,7 @@ const Header = () =>{
                     <li>Hello</li>
                     <li id="show-user-name">{userName}</li>
                 </ul>
-                <img src={userProfile} alt="image"/>
+                <img src={userProfile} alt="image" onClick={()=>setLogoutMadal(!logoutModal)}/>
             </div>
         </div>
     </header>

@@ -166,7 +166,7 @@ a{
 
 #disclaimer-section{
     position: relative;
-    padding: 40px;
+    padding: 80px 40px 20px 40px;
     z-index: 1;
 }
 #disclaimers > h2{
@@ -236,7 +236,7 @@ a{
 /* Question & Answer page start */
 #q-a-section{
     position: relative;
-    padding: 40px 40px 0px 40px;
+    padding: 100px 40px 0px 40px;
 }
 /* #q-a-section > div{
     height: 113px;
@@ -385,7 +385,7 @@ a{
 
 #score-card-section{
     position: relative;
-    padding: 16px 40px;
+    padding: 80px 40px;
 }
 #heading{
     position: relative;

@@ -41,6 +41,7 @@ function Login() {
         if (validate()) {
 
             const loggedInUser = users.find((u) => u.email === email && u.password === password)
+
             if (loggedInUser) {
                 localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
                 navigate("/dashboard")
@@ -86,7 +87,7 @@ function Login() {
                         <button type="button"> <img src={googleIcon} />Sign up with Google</button>
                     </div>
 
-                    <p className="create-account"> Don't have an account? <Link to={"/signup"}>Sign up?</Link></p>
+                    <p className="create-account"> Don't have an account? <Link to={"/signup"}>Sign up?</Link> <Link to={"/adminlogin"}>Admin Login?</Link></p>
                 </div>
             </section>
         </>
