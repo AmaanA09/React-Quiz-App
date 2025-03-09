@@ -53,6 +53,12 @@
       "name": "Admin",
       "email": "admin@gmail.com",
       "password": "admin123"
+    },
+    {
+      "id": "2b65",
+      "name": "abcd",
+      "email": "abc@gmail.com",
+      "password": "12345678"
     }
   ],
   "questions": [
@@ -485,6 +491,56 @@
           ],
           "marks": 30,
           "date": "Sat Mar 08 2025"
+        },
+        {
+          "selectedAnswer": [
+            {
+              "questions": "Which method is used to add a new element to the end of an array?",
+              "options": [
+                "push()",
+                "pop()",
+                "shift()",
+                "unshift()"
+              ],
+              "selectedOption": "push()",
+              "correctAnswer": "push()"
+            },
+            {
+              "questions": "How can you convert a string to an integer in JavaScript?",
+              "options": [
+                "parseInt()",
+                "parseFloat()",
+                "toInteger()",
+                "convertToInt()"
+              ],
+              "selectedOption": "parseInt()",
+              "correctAnswer": "parseInt()"
+            },
+            {
+              "questions": "How can you create a function in JavaScript?",
+              "options": [
+                "function myFunction() {}",
+                "create function myFunction() {}",
+                "function: myFunction() {}",
+                "myFunction() = function() {}"
+              ],
+              "selectedOption": "function myFunction() {}",
+              "correctAnswer": "function myFunction() {}"
+            },
+            {
+              "questions": "What is the output of 'console.log(typeof NaN);'",
+              "options": [
+                "number",
+                "NaN",
+                "undefined",
+                "object"
+              ],
+              "selectedOption": "NaN",
+              "correctAnswer": "number"
+            }
+          ],
+          "marks": 30,
+          "date": "Sat Mar 08 2025"
         }
       ]
     },
@@ -805,6 +861,65 @@
           ],
           "marks": 20,
           "date": "Sun Mar 02 2025"
+        }
+      ]
+    },
+    {
+      "id": "ed83",
+      "name": "abcd",
+      "email": "abc@gmail.com",
+      "date": "Sat Mar 08 2025",
+      "score": 10,
+      "tests": [
+        {
+          "selectedAnswer": [
+            {
+              "questions": "What is the purpose of the 'this' keyword in JavaScript?",
+              "options": [
+                "It refers to the global object.",
+                "It refers to the object from which the function was called.",
+                "It refers to the parent object.",
+                "It refers to the function itself."
+              ],
+              "selectedOption": "It refers to the global object.",
+              "correctAnswer": "It refers to the object from which the function was called."
+            },
+            {
+              "questions": "How can you convert a string to an integer in JavaScript?",
+              "options": [
+                "parseInt()",
+                "parseFloat()",
+                "toInteger()",
+                "convertToInt()"
+              ],
+              "selectedOption": "parseFloat()",
+              "correctAnswer": "parseInt()"
+            },
+            {
+              "questions": " What is the correct syntax to output 'Hello, World!' in JavaScript?",
+              "options": [
+                "print('Hello, World!');",
+                "console.log('Hello, World!')",
+                "echo('Hello, World!');",
+                "document.write('Hello, World!');"
+              ],
+              "selectedOption": "console.log('Hello, World!')",
+              "correctAnswer": "console.log('Hello, World!')"
+            },
+            {
+              "questions": "Which method is used to add a new element to the end of an array?",
+              "options": [
+                "push()",
+                "pop()",
+                "shift()",
+                "unshift()"
+              ],
+              "selectedOption": "pop()",
+              "correctAnswer": "push()"
+            }
+          ],
+          "marks": 10,
+          "date": "Sat Mar 08 2025"
         }
       ]
     }

@@ -639,30 +639,30 @@ a{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 #admin-page-menu > div{
+    display: flex;
     width: 200px;
     padding-right: 90px;
     padding: 8px;
     margin-left: -20px;  
     cursor: pointer; 
+    /* justify-content: center; */
+    gap: 10px;
 }
 
-#admin-page-menu > div > a > p > i{
+#admin-page-menu > div > a> i{
     font-size: 18px; 
-    margin-right: 10px
-}
-.sideBarUser{
-    padding-left: 5px;
-}
-#admin-page-menu > div > a > p{
-    padding-left: 28px;
+    margin-right: 10px;
+} 
+#admin-page-menu > div > a{
+    padding-left: 10px;
     font-size: 18px;
     color: #878a99;
 }
-#admin-page-menu > div > a > p:hover{
+#admin-page-menu > div > a:hover{
     color: #F3BD00;
 }
-.active-link{
-    background-color: #F3BD00;
+#admin-page-menu .active  {
+    color: #f3bd00;
 }
 
 #admin-dashboard{
